@@ -1,54 +1,48 @@
 import React, { useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
+import { FcBusinessman } from 'react-icons/fc'; // Icono logo
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-black text-white py-4">
+    <nav className="bg-black text-white py-4 px-6">
       <div className="container mx-auto flex justify-between items-center">
-        {/* Primera Columna: Navegación alineada a la izquierda */}
-        <div className="flex-1 text-left">
-          <ul className="hidden md:flex space-x-6 ml-0">
-            <li><a href="#inicio" className="hover:underline">Inicio</a></li>
-            <li><a href="#sobre-mi" className="hover:underline">Sobre mí</a></li>
-            <li><a href="#tecnologias" className="hover:underline">Tecnologías</a></li>
-            <li><a href="#proyectos" className="hover:underline">Proyectos</a></li>
-            <li><a href="#contacto" className="hover:underline">Contacto</a></li>
-          </ul>
-          {/* Botón de menú para móviles */}
-          <div className="md:hidden">
-            <button onClick={() => setMenuOpen(!menuOpen)} className="focus:outline-none">
-              {menuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
-            </button>
-          </div>
+        {/* Logo o Ícono alineado a la izquierda */}
+        <div className="flex items-center">
+          <FcBusinessman className="text-3xl" />
+          <span className="ml-2 text-xl font-bold">YonnyDev</span>
         </div>
 
-        {/* Segunda Columna: Título centrado */}
-        <div className="flex-1 text-center">
-          <h1 className="text-xl font-bold">Mi Portafolio</h1>
-        </div>
+        {/* Menú de navegación */}
+        <ul className="hidden md:flex space-x-8">
+          <li><a href="#about" className="hover:underline">About</a></li>
+          <li><a href="#resume" className="hover:underline">Resume</a></li>
+          <li><a href="#portfolio" className="hover:underline">Portfolio</a></li>
+          <li><a href="#contact" className="hover:underline">Contact</a></li>
+        </ul>
 
-        {/* Tercera Columna: Correo alineado a la derecha */}
-        <div className="flex-1 text-right">
-          <a href="mailto:miemail@example.com" className="hover:underline">
-            miemail@example.com
-          </a>
+        {/* Botón de menú para móviles */}
+        <div className="md:hidden">
+          <button onClick={() => setMenuOpen(!menuOpen)} className="focus:outline-none">
+            {menuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+          </button>
         </div>
       </div>
 
-      {/* Menú desplegable para móviles */}
-      {menuOpen && (
-        <div className="md:hidden bg-black text-white">
-          <ul className="space-y-4 px-4 py-2">
-            <li><a href="#inicio" className="block hover:underline">Inicio</a></li>
-            <li><a href="#sobre-mi" className="block hover:underline">Sobre mí</a></li>
-            <li><a href="#tecnologias" className="block hover:underline">Tecnologías</a></li>
-            <li><a href="#proyectos" className="block hover:underline">Proyectos</a></li>
-            <li><a href="#contacto" className="block hover:underline">Contacto</a></li>
-          </ul>
-        </div>
-      )}
+      {/* Menú desplegable para móviles con animación */}
+      <div
+        className={`transition-all duration-700 ease-in-out transform ${
+          menuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
+        } overflow-hidden md:hidden bg-black`}
+      >
+        <ul className="space-y-4 px-4 py-2">
+          <li><a href="#about" className="block hover:underline">About</a></li>
+          <li><a href="#resume" className="block hover:underline">Resume</a></li>
+          <li><a href="#portfolio" className="block hover:underline">Portfolio</a></li>
+          <li><a href="#contact" className="block hover:underline">Contact</a></li>
+        </ul>
+      </div>
     </nav>
   );
 };
