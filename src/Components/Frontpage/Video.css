@@ -1,0 +1,72 @@
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .video-background video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+  
+  .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    z-index: 1;
+  }
+  
+  .content h1 {
+    font-size: 3rem;
+  }
+  
+  .content p {
+    font-size: 1.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: .15em solid #fff; /* Apariencia del cursor */
+  }
+  
+  .video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+  
+  .hero-container {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+  }
+  .typing-text {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+  }
+  
+  .blinking-cursor {
+    display: inline-block;
+    font-weight: bold;
+    margin-left: 2px;
+    color: white;
+    animation: blink 1s step-end infinite;
+  }
+  
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+  
