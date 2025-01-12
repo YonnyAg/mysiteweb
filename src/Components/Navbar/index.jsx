@@ -24,9 +24,7 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`transition-all duration-300 ${
-          isScrolled ? 'bg-[#041037] py-3' : 'bg-transparent py-6'
-        } text-white fixed w-full top-0 left-0 z-50`}
+        className={`transition-all duration-300 ${isScrolled ? 'bg-[#00072D] py-3 border-b-2 border-white' : 'bg-transparent py-6'} text-white fixed w-full top-0 left-0 z-50`}
       >
         <div className="container mx-auto flex justify-between items-center">
           {/* Logo o Ícono alineado a la izquierda */}

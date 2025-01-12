@@ -29,13 +29,6 @@
     font-size: 3rem;
   }
   
-  .content p {
-    font-size: 1.5rem;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: .15em solid #fff; /* Apariencia del cursor */
-  }
-  
   .video-background {
     position: absolute;
     top: 0;

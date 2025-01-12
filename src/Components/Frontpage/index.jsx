@@ -3,7 +3,7 @@ import './Video.css';
 
 const Hero = () => {
   const [text, setText] = useState('');
-  const fullText = "Soy Diseñador web y Aplicaciones.";
+  const fullText = "Soy Diseñador Web y Aplicaciones";
   const typingSpeed = 100;  // Velocidad de escritura (en ms)
   const deletingSpeed = 50; // Velocidad de borrado (en ms)
   const delayBeforeDelete = 5000; // Tiempo de espera antes de borrar (5 segundos)
@@ -32,7 +32,7 @@ const Hero = () => {
   }, [index, isDeleting]);
 
   return (
-    <div className="relative h-screen w-full flex items-center justify-center bg-black">
+    <div className="relative h-screen w-full flex items-center justify-center bg-black"> {/* Aquí seguimos usando h-screen */}
       <video
         autoPlay
         loop
@@ -42,8 +42,12 @@ const Hero = () => {
         <source src="/videos/portada.mp4" type="video/mp4" />
         Tu navegador no soporta el video.
       </video>
+
+      {/* Filtro oscuro sobre el video */}
+      <div className="absolute inset-0 bg-black opacity-50"></div>
+
       <div className="relative z-10 text-white text-center">
-        <h1 className="text-4xl font-bold mb-4">Hola</h1>
+        <h1 className="text-4xl font-bold mb-4">¡Hola!</h1>
         <h2 className="text-2xl font-light">
           {text}
           <span className="blinking-cursor">|</span>

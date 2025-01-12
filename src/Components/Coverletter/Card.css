@@ -1,0 +1,6 @@
+/* Estilo general para la imagen */
+img {
+    object-fit: cover;
+    max-height: 250px; /* Ajusta el tamaño de la imagen */
+  }
+  
